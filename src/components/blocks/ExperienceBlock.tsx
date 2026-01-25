@@ -64,7 +64,7 @@ export function ExperienceBlock({ colSpan = 2, rowSpan = 2 }: BlockProps) {
     const experiences = activeTab === 'work' ? WORK_EXPERIENCE : VOLUNTEER_EXPERIENCE;
 
     return (
-        <BentoItem colSpan={colSpan} rowSpan={rowSpan} className="flex flex-col p-6">
+        <BentoItem colSpan={colSpan} rowSpan={rowSpan} className="flex flex-col p-6 row-span-3 md:order-2">
             <div className="flex items-center justify-between mb-6">
                 <div className="flex bg-stone-100 p-1 rounded-xl">
                     <button
@@ -94,7 +94,7 @@ export function ExperienceBlock({ colSpan = 2, rowSpan = 2 }: BlockProps) {
                 </div>
             </div>
 
-            <div className="flex flex-col gap-5 overflow-y-auto pr-2 custom-scrollbar">
+            <div className="flex flex-col gap-5">
                 {experiences.map((exp, index) => (
                     <div key={index} className="flex gap-4 items-start group animate-in fade-in slide-in-from-bottom-2 duration-500" style={{ animationDelay: `${index * 100}ms` }}>
                         <div className={cn(

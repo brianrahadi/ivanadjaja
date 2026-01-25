@@ -40,7 +40,7 @@ export function PhotoCollageBlock({ colSpan = 1, rowSpan = 1 }: BlockProps) {
     }, []);
 
     return (
-        <BentoItem colSpan={colSpan} rowSpan={rowSpan} className="!p-0 relative group">
+        <BentoItem colSpan={colSpan} rowSpan={rowSpan} className="!p-0 relative group md:order-1">
             <div className="w-full h-full relative">
                 {PHOTOS.map((photo, index) => (
                     <img
