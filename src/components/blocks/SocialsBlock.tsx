@@ -16,7 +16,7 @@ export function SocialsBlock({ colSpan = 1, rowSpan = 1 }: BlockProps) {
                 <a href="https://www.linkedin.com/in/ivana-djaja/" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center bg-[#0077b5] text-white rounded-2xl hover:scale-105 transition-transform shadow-sm">
                     <Linkedin size={24} />
                 </a>
-                <a href="#" className="flex items-center justify-center bg-[#d4a373] rounded-2xl hover:scale-105 transition-transform col-span-2 shadow-sm">
+                <a href="mailto:ivana.angelica0@gmail.com" className="flex items-center justify-center bg-[#d4a373] rounded-2xl hover:scale-105 transition-transform col-span-2 shadow-sm">
                     <MailIcon size={24} />
                 </a>
             </div>

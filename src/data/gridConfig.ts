@@ -1,5 +1,7 @@
 import { ProfileBlock } from '../components/blocks/ProfileBlock';
 import { SocialsBlock } from '../components/blocks/SocialsBlock';
+import { ExperienceBlock } from '../components/blocks/ExperienceBlock';
+import { PhotoCollageBlock } from '../components/blocks/PhotoCollageBlock';
 
 export type GridItem = {
     id: string;
@@ -10,7 +12,8 @@ export type GridItem = {
 
 export const gridConfig: GridItem[] = [
     { id: 'profile', Component: ProfileBlock, colSpan: 2, rowSpan: 1 },
-    // { id: 'about', Component: AboutBlock, colSpan: 2, rowSpan: 1 },
     { id: 'socials', Component: SocialsBlock, colSpan: 1, rowSpan: 1 },
-    // { id: 'stack', Component: TechStackBlock, colSpan: 1, rowSpan: 1 },
+    { id: 'photos', Component: PhotoCollageBlock, colSpan: 1, rowSpan: 1 },
+    { id: 'experience', Component: ExperienceBlock, colSpan: 2, rowSpan: 1 },
+    // { id: 'about', Component: AboutBlock, colSpan: 2, rowSpan: 1 },
 ];
