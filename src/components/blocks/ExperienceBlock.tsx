@@ -1,12 +1,14 @@
+import { useState } from 'react';
 import { BentoItem } from '../BentoItem';
-import { Briefcase } from 'lucide-react';
+import { Briefcase, Heart } from 'lucide-react';
+import { cn } from '../../lib/utils';
 
 interface BlockProps {
     colSpan?: 1 | 2 | 3 | 4;
     rowSpan?: 1 | 2 | 3 | 4;
 }
 
-const EXPERIENCES = [
+const WORK_EXPERIENCE = [
     {
         role: 'Research Assistant',
         company: 'Beatty Lab @ UBC',
@@ -27,22 +29,72 @@ const EXPERIENCES = [
     }
 ];
 
+const VOLUNTEER_EXPERIENCE = [
+    {
+        role: 'Research Assistant',
+        company: 'UBC',
+        period: 'Sep 2023 - Present',
+        description: 'Volunteering in various biology labs assisting with data collection.'
+    },
+    {
+        role: 'Event Coordinator',
+        company: 'Biotech Student Association',
+        period: 'Sep 2022 - May 2023',
+        description: 'Organized networking events for students and industry professionals.'
+    }
+];
+
+type TabType = 'work' | 'volunteering';
+
 export function ExperienceBlock({ colSpan = 2, rowSpan = 1 }: BlockProps) {
+    const [activeTab, setActiveTab] = useState<TabType>('work');
+
+    const experiences = activeTab === 'work' ? WORK_EXPERIENCE : VOLUNTEER_EXPERIENCE;
+
     return (
         <BentoItem colSpan={colSpan} rowSpan={rowSpan} className="flex flex-col p-6">
-            <div className="flex items-center gap-2 mb-4 text-stone-400">
-                <Briefcase size={18} />
-                <span className="text-xs font-bold tracking-widest uppercase">Experience</span>
+            <div className="flex items-center justify-between mb-6">
+                <div className="flex bg-stone-100 p-1 rounded-xl">
+                    <button
+                        onClick={() => setActiveTab('work')}
+                        className={cn(
+                            "flex items-center gap-2 px-4 py-1.5 rounded-lg text-sm font-medium transition-all duration-300",
+                            activeTab === 'work'
+                                ? "bg-white text-stone-800 shadow-sm"
+                                : "text-stone-500 hover:text-stone-700 hover:bg-stone-200/50"
+                        )}
+                    >
+                        <Briefcase size={14} />
+                        Work
+                    </button>
+                    <button
+                        onClick={() => setActiveTab('volunteering')}
+                        className={cn(
+                            "flex items-center gap-2 px-4 py-1.5 rounded-lg text-sm font-medium transition-all duration-300",
+                            activeTab === 'volunteering'
+                                ? "bg-white text-stone-800 shadow-sm"
+                                : "text-stone-500 hover:text-stone-700 hover:bg-stone-200/50"
+                        )}
+                    >
+                        <Heart size={14} />
+                        Volunteering
+                    </button>
+                </div>
             </div>
 
-            <div className="flex flex-col gap-4">
-                {EXPERIENCES.map((exp, index) => (
-                    <div key={index} className="flex gap-4 items-start group">
-                        <div className="mt-1.5 w-2 h-2 rounded-full bg-emerald-200 group-hover:bg-emerald-400 transition-colors shrink-0" />
+            <div className="flex flex-col gap-5 overflow-y-auto pr-2 custom-scrollbar">
+                {experiences.map((exp, index) => (
+                    <div key={index} className="flex gap-4 items-start group animate-in fade-in slide-in-from-bottom-2 duration-500" style={{ animationDelay: `${index * 100}ms` }}>
+                        <div className={cn(
+                            "mt-1.5 w-2 h-2 rounded-full transition-colors shrink-0",
+                            activeTab === 'work' ? "bg-emerald-200 group-hover:bg-emerald-400" : "bg-rose-200 group-hover:bg-rose-400"
+                        )} />
                         <div>
                             <h4 className="font-semibold text-stone-800 leading-snug">{exp.role}</h4>
-                            <div className="text-sm text-stone-500 font-medium">{exp.company} • {exp.period}</div>
-                            {/* <p className="text-sm text-stone-400 mt-1">{exp.description}</p> */}
+                            <div className="text-sm text-stone-500 font-medium mb-1">{exp.company} • {exp.period}</div>
+                            {activeTab === 'volunteering' && (
+                                <p className="text-xs text-stone-400 leading-relaxed max-w-prose">{exp.description}</p>
+                            )}
                         </div>
                     </div>
                 ))}

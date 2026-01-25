@@ -1,4 +1,6 @@
 import { BentoItem } from '../BentoItem';
+import { LocateIcon, MapPin } from 'lucide-react';
+
 import IvanaImg from '../../assets/ivana.webp';
 interface BlockProps {
     colSpan?: 1 | 2 | 3 | 4;
@@ -20,6 +22,7 @@ export function ProfileBlock({ colSpan = 2, rowSpan = 1 }: BlockProps) {
                 </div>
                 {/* Visual toggle per design reference, but non-functional for now as requested */}
                 <div className="px-4 py-1.5 rounded-full border border-stone-200 text-stone-500 text-sm font-medium bg-white transition-colors cursor-default select-none">
+                    {/* <MapPin size={14} className="mr-1" /> */}
                     Vancouver, BC
                 </div>
             </div>
