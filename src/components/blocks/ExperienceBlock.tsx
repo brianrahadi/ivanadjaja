@@ -8,16 +8,22 @@ interface BlockProps {
 
 const EXPERIENCES = [
     {
-        role: 'Biotechnology Student',
-        company: 'UBC-BCIT',
-        period: '2023 - Present',
-        description: 'Joint Honours in Biotechnology'
+        role: 'Research Assistant',
+        company: 'Beatty Lab @ UBC',
+        period: 'May 2025 - Aug 2025',
+        description: 'WLIURA award recipient. Investigated cell surface receptors for the phage-like gene transfer agent (RcGTA) in Rhodobacter capsulatus using FastCloning to generate knock-out mutants.'
     },
     {
-        role: 'Research Assistant',
-        company: 'BioLabs Inc.',
-        period: 'Summer 2024',
-        description: 'Assisted in genetic sequencing projects.'
+        role: 'Protein Engineering Co-op',
+        company: 'Zymeworks Inc.',
+        period: 'May 2024 - Apr 2025',
+        description: 'Evaluated developability of therapeutic antibody formats as part of a personal protein engineering project.'
+    },
+    {
+        role: 'Environmental Microbiology Co-op',
+        company: 'BC Centre for Disease Control',
+        period: 'May 2023 - Sep 2023',
+        description: 'Compared detection methods for Legionella pneumophila in cooling tower water samples.'
     }
 ];
 
