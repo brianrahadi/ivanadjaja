@@ -12,7 +12,7 @@ export function BentoItem({ children, className, colSpan = 1, rowSpan = 1 }: Ben
     return (
         <div
             className={cn(
-                "group relative overflow-hidden rounded-3xl bg-white border border-[#EDEBE8] p-6 shadow-[0_2px_8px_rgba(0,0,0,0.02)] hover:shadow-[0_8px_16px_rgba(0,0,0,0.04)] transition-all duration-300",
+                "group relative overflow-hidden rounded-3xl bg-[#F9F5EE] p-6 shadow-[0_2px_8px_rgba(0,0,0,0.08)] hover:shadow-[0_8px_16px_rgba(0,0,0,0.12)] transition-all duration-300",
                 // Mobile first: default to full width (handled by grid cols), but here we control spans on different breakpoints
                 "col-span-1", // Default mobile
 
@@ -22,6 +22,7 @@ export function BentoItem({ children, className, colSpan = 1, rowSpan = 1 }: Ben
                 colSpan === 3 && "md:col-span-3",
                 colSpan === 4 && "md:col-span-4",
 
+                rowSpan === 1 && "md:row-span-1",
                 rowSpan === 2 && "md:row-span-2",
                 rowSpan === 3 && "md:row-span-3",
                 rowSpan === 4 && "md:row-span-4",

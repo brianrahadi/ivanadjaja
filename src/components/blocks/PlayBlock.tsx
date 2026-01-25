@@ -89,7 +89,7 @@ export function PlayBlock({ colSpan = 1, rowSpan = 1 }: BlockProps) {
     };
 
     return (
-        <BentoItem colSpan={colSpan} rowSpan={rowSpan} className="flex flex-col relative !p-0 bg-[#E8F3E8] border-[#D1FAE5] overflow-hidden group md:order-3">
+        <BentoItem colSpan={colSpan} rowSpan={rowSpan} className="h-64 md:h-auto flex flex-col relative !p-0 bg-[#E8F3E8] border-[#D1FAE5] overflow-hidden group md:order-3">
             {/* Controls */}
             <div className="absolute top-3 right-3 flex gap-2 z-10 opacity-0 group-hover:opacity-100 transition-opacity">
                 <button
