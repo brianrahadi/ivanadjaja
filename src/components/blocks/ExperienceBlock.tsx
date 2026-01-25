@@ -64,7 +64,7 @@ export function ExperienceBlock({ colSpan = 2, rowSpan = 2 }: BlockProps) {
     const experiences = activeTab === 'work' ? WORK_EXPERIENCE : VOLUNTEER_EXPERIENCE;
 
     return (
-        <BentoItem colSpan={colSpan} rowSpan={rowSpan} className="flex flex-col p-6 md:order-2">
+        <BentoItem colSpan={colSpan} rowSpan={rowSpan} className="flex flex-col p-4 md:p-6 md:order-2">
             <div className="flex items-center justify-between mb-6">
                 <div className="flex bg-stone-100 p-1 rounded-xl">
                     <button

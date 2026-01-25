@@ -8,7 +8,7 @@ interface BlockProps {
 
 export function ProfileBlock({ colSpan = 2, rowSpan = 1 }: BlockProps) {
     return (
-        <BentoItem colSpan={colSpan} rowSpan={rowSpan} className="flex flex-col md:flex-row p-8 md:p-0 bg-[#fefae0] border border-[#EDEBE8] shadow-[0_2px_8px_rgba(0,0,0,0.02)] overflow-hidden">
+        <BentoItem colSpan={colSpan} rowSpan={rowSpan} className="flex flex-col md:flex-row p-4 md:p-0 bg-[#fefae0] border border-[#EDEBE8] shadow-[0_2px_8px_rgba(0,0,0,0.02)] overflow-hidden">
             {/* Image Section */}
             <div className="flex justify-between items-start mb-6 md:mb-0 md:w-1/3 md:h-full md:relative">
                 <div className="h-24 w-24 rounded-2xl bg-stone-200 overflow-hidden shadow-sm md:rounded-none md:border-none md:w-full md:h-full md:absolute md:inset-0">
