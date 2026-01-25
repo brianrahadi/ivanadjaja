@@ -7,7 +7,7 @@ interface BlockProps {
 
 export function ProfileBlock({ colSpan = 2, rowSpan = 1 }: BlockProps) {
     return (
-        <BentoItem colSpan={colSpan} rowSpan={rowSpan} className="flex flex-col p-8 bg-white border border-[#EDEBE8] shadow-[0_2px_8px_rgba(0,0,0,0.02)]">
+        <BentoItem colSpan={colSpan} rowSpan={rowSpan} className="flex flex-col p-8 bg-[#fefae0] border border-[#EDEBE8] shadow-[0_2px_8px_rgba(0,0,0,0.02)]">
             <div className="flex justify-between items-start mb-6">
                 <div className="h-24 w-24 rounded-full bg-stone-200 overflow-hidden border-2 border-white shadow-sm">
                     {/* Placeholder for avatar image */}
