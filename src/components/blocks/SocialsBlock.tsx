@@ -1,5 +1,5 @@
 import { BentoItem } from '../BentoItem';
-import { FileText, Linkedin, MailIcon, BookOpenText } from 'lucide-react';
+import { FileText, Linkedin, MailIcon } from 'lucide-react';
 import GoodreadsSVG from '../../assets/goodreads.svg';
 
 interface BlockProps {
