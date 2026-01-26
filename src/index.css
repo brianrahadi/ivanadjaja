@@ -1,2 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+DW+Pica:ital@0;1&display=swap');
 @import "tailwindcss";
 @import "@fontsource/playfair-display";
+
+html,
+root {
+    font-family: "IM Fell DW Pica", serif;
+    font-weight: 400;
+    font-style: normal;
+}

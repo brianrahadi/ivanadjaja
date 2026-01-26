@@ -1,5 +1,6 @@
 import { BentoItem } from '../BentoItem';
 import { FileText, Linkedin, MailIcon, BookOpenText } from 'lucide-react';
+import GoodreadsSVG from '../../assets/goodreads.svg';
 
 interface BlockProps {
     colSpan?: 1 | 2 | 3 | 4;
@@ -20,7 +21,7 @@ export function SocialsBlock({ colSpan = 1, rowSpan = 1 }: BlockProps) {
                     <MailIcon size={24} />
                 </a>
                 <a href="https://www.goodreads.com/user/show/142153228-ivy" target="_blank" rel="noopener noreferrer" className="border border-[#E7E5E4] flex items-center justify-center bg-[#faedcd] rounded-2xl hover:scale-105 transition-transform shadow-sm">
-                    <BookOpenText size={24} />
+                    <img src={GoodreadsSVG} alt="Goodreads" width={84} />
                 </a>
             </div>
         </BentoItem>
