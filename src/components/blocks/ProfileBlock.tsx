@@ -10,9 +10,9 @@ interface BlockProps {
 
 export function ProfileBlock({ colSpan, rowSpan, delay }: BlockProps) {
     return (
-        <BentoItem colSpan={colSpan} rowSpan={rowSpan} delay={delay} className="flex flex-row p-4 md:p-0 bg-[#fefae0] overflow-hidden">
+        <BentoItem colSpan={colSpan} rowSpan={rowSpan} delay={delay} className="flex flex-col md:flex-row p-4 md:p-0 bg-[#fefae0] overflow-hidden">
             {/* Image Section */}
-            <div className="flex justify-between items-start mb-4 md:w-1/3 md:h-full md:relative">
+            <div className="flex justify-between items-start mb-4 md:mb-0 md:w-1/3 md:h-full md:relative">
                 <div className="h-24 w-24 rounded-2xl overflow-hidden md:rounded-none md:border-none md:w-full md:h-full md:absolute md:inset-0">
                     <img
                         src={IvanaImg}
@@ -32,21 +32,21 @@ export function ProfileBlock({ colSpan, rowSpan, delay }: BlockProps) {
                             I'm fascinated by structural biology and protein engineering, specifically looking at how we can design novel therapeutics.
                         </span>
                     }>
-                        biology research and development
+                        biological R&D
                     </InteractiveMark>. Outside of school, I enjoy{' '}
                     <InteractiveMark content={
                         <span>
-                            It's my creative outlet! I love experimenting with different polish finishes, nail art designs, and colors. Check my <a href="https://www.instagram.com/ivysmanis" target="_blank" rel="noopener noreferrer" className="text-pink-600 hover:underline">Instagram</a>!
+                            It's my creative outlet! I love experimenting with different polish finishes, nail art designs, and colors. Check out my <a href="https://www.instagram.com/ivysmanis" target="_blank" rel="noopener noreferrer" className="text-pink-600 hover:underline">nail art insta</a>!
                         </span>
                     }>
                         painting my nails
                     </InteractiveMark>,
                     <InteractiveMark content={
                         <span>
-                            I like dystopian and historical fiction. Some of my favorites include The Poppy War trilogy by R.F. Kuang and The Hunger Games series by Suzanne Collins.
+                            I like dystopian and historical fictions. Some of my favorites include The Poppy War trilogy and The Hunger Games series.
                         </span>
                     }>
-                        reading books
+                        reading fictions
                     </InteractiveMark>, and hiking with my friends.
                 </div>
             </div>

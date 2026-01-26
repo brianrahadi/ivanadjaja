@@ -8,6 +8,12 @@ export function MainLayout({ children }: { children: ReactNode }) {
             <div className="w-full">
                 {children}
             </div>
+
+            <footer className="mt-12 mb-4 text-center text-stone-500 text-sm font-pica opacity-60 hover:opacity-100 transition-opacity">
+                <a href="https://brianrahadi.com" target="_blank" rel="noopener noreferrer" className="hover:underline">
+                    built with &lt;3 by brianrahadi
+                </a>
+            </footer>
         </div>
     );
 }

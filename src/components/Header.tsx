@@ -62,15 +62,15 @@ export function Header() {
     const timeStr = time.toLocaleTimeString('en-US', { hour12: true, timeZoneName: 'short' });
 
     return (
-        <header className="w-full max-w-4xl mx-auto px-4 py-2 md:py-4 flex flex-col md:flex-row justify-between items-center text-stone-500 text-sm md:text-base font-medium font-pica gap-1 md:gap-0">
+        <header className="w-full max-w-4xl mx-auto px-4 py-2 md:py-4 flex flex-row justify-between items-center text-stone-500 text-sm md:text-base font-medium font-pica gap-1 md:gap-0">
             {/* Left: Location & Weather */}
             <div className="flex items-center gap-2 h-6">
                 {weather && (
                     <span className="flex items-center gap-2 animate-fade-in">
                         <span>Vancouver, BC</span>
                         <span>-</span>
-                        <span>{weather.desc}</span>
-                        <span>-</span>
+                        <span className="hidden md:inline">{weather.desc}</span>
+                        <span className="hidden md:inline">-</span>
                         <span>{Math.round(weather.temp)}°C</span>
                     </span>
                 )}
@@ -80,7 +80,7 @@ export function Header() {
             <div className="flex items-center gap-2 tabular-nums h-6">
                 {weather && (
                     <span className="flex items-center gap-2 animate-fade-in">
-                        <span>{dateStr}</span>
+                        <span className="hidden md:inline">{dateStr}</span>
                         <span className="min-w-[110px] text-right">{timeStr}</span>
                     </span>
                 )}
