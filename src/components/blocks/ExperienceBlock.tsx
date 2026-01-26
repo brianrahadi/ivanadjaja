@@ -13,25 +13,25 @@ const WORK_EXPERIENCE = [
     {
         role: 'Research Assistant',
         company: 'Beatty Lab @ UBC',
-        period: '25 - Aug 2025',
+        period: 'May 2025 - Aug. 2025',
         description: 'Investigated cell surface receptors for the phage-like gene transfer agent (RcGTA) in Rhodobacter capsulatus using FastCloning to generate knock-out mutants.'
     },
     {
         role: 'Protein Engineering Co-op',
         company: 'Zymeworks Inc.',
-        period: 'May 2024 - Apr 2025',
+        period: 'May 2024 - Apr. 2025',
         description: 'Evaluated developability of therapeutic antibody formats as part of a personal protein engineering project.'
     },
     {
         role: 'Environmental Microbiology Co-op',
         company: 'BC Centre for Disease Control',
-        period: 'May 2023 - Sep 2023',
+        period: 'May 2023 - Sep. 2023',
         description: 'Compared detection methods for Legionella pneumophila in cooling tower water samples.'
     },
     {
         role: 'Student Research Assistant',
         company: 'Langara College',
-        period: 'May 2022 - Aug 2022',
+        period: 'May 2022 - Aug. 2022',
         description: 'Assisted with research on chaga mushroom (Inonotus obliquus), commonly used in traditional Chinese medicine'
     }
 ];
