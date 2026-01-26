@@ -1,16 +1,15 @@
-import { useState, useRef, useEffect, type ReactNode } from 'react';
+import { useState, useRef } from 'react';
 import { cn } from '../lib/utils';
-import { X } from 'lucide-react';
 
 interface InteractiveMarkProps {
-    children: ReactNode;
-    content: ReactNode;
+    children: React.ReactNode;
+    content: React.ReactNode;
     className?: string;
 }
 
 export function InteractiveMark({ children, content, className }: InteractiveMarkProps) {
     const [isOpen, setIsOpen] = useState(false);
-    const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+    const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
     const handleMouseEnter = () => {
         if (timeoutRef.current) {
