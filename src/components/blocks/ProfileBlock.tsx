@@ -16,7 +16,7 @@ export function ProfileBlock({ colSpan, rowSpan, delay }: BlockProps) {
             <div className="flex justify-center items-center mb-4 md:mb-0 md:w-1/3 md:h-full md:relative perspective-1000 group/image">
                 <div className="relative h-24 w-24 md:w-full md:h-full transition-transform duration-700 transform-style-3d group-hover/image:rotate-y-180">
                     {/* Front Side */}
-                    <div className="absolute inset-0 w-full h-full backface-hidden flex items-center justify-center">
+                    <div className="absolute inset-0 w-full h-full backface-hidden flex items-center justify-center bg-[#fefae0]">
                         <img
                             src={IvanaImg}
                             alt="Profile"
@@ -24,7 +24,7 @@ export function ProfileBlock({ colSpan, rowSpan, delay }: BlockProps) {
                         />
                     </div>
                     {/* Back Side */}
-                    <div className="absolute inset-0 w-full h-full backface-hidden rotate-y-180 flex items-center justify-center">
+                    <div className="absolute inset-0 w-full h-full backface-hidden rotate-y-180 flex items-center justify-center bg-[#fefae0]">
                         <img
                             src={MemojiImg}
                             alt="Profile Memoji"
@@ -59,7 +59,7 @@ export function ProfileBlock({ colSpan, rowSpan, delay }: BlockProps) {
                         </span>
                     }>
                         reading fictions
-                    </InteractiveMark>, and hiking with my friends.
+                    </InteractiveMark>, and struggling to keep up hiking with my friends.
                 </div>
             </div>
         </BentoItem>
