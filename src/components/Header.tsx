@@ -48,7 +48,6 @@ export function Header() {
         return () => clearInterval(interval);
     }, []);
 
-    // Update Time
     useEffect(() => {
         const timer = setInterval(() => {
             setTime(new Date());
@@ -56,8 +55,6 @@ export function Header() {
         return () => clearInterval(timer);
     }, []);
 
-    // Format Date: "Sunday, Jan 25"
-    // Format Time: "6:22:35 PM PST"
     const dateStr = time.toLocaleString('en-US', { weekday: 'long', month: 'short', day: 'numeric' });
     const timeStr = time.toLocaleTimeString('en-US', { hour12: true, timeZoneName: 'short' });
 
