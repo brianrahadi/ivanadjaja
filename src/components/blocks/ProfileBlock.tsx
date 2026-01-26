@@ -1,4 +1,5 @@
 import { BentoItem } from '../BentoItem';
+import { InteractiveMark } from '../InteractiveMark';
 import IvanaImg from '../../assets/ivana.webp';
 
 interface BlockProps {
@@ -24,8 +25,29 @@ export function ProfileBlock({ colSpan, rowSpan, delay }: BlockProps) {
             {/* Content Section */}
             <div className="md:w-2/3 md:p-8 md:flex md:flex-col md:justify-center">
                 <h2 className="text-xl md:text-2xl font-bold">Hello there!</h2>
-                <div className="prose prose-stone">
-                    I'm Ivana, a UBC-BCIT Biotechnology student with interests in biological research and development. Outside of school, I enjoy painting my nails, reading books, and hiking with my friends.
+                <div className="prose prose-stone leading-relaxed">
+                    I'm Ivana, a UBC-BCIT Biotechnology student interested in
+                    <InteractiveMark content={
+                        <span>
+                            I'm fascinated by structural biology and protein engineering, specifically looking at how we can design novel therapeutics.
+                        </span>
+                    }>
+                        biology research and development
+                    </InteractiveMark>. Outside of school, I enjoy{' '}
+                    <InteractiveMark content={
+                        <span>
+                            It's my creative outlet! I love experimenting with different polish finishes, nail art designs, and colors. Check my <a href="https://www.instagram.com/ivysmanis" target="_blank" rel="noopener noreferrer" className="text-pink-600 hover:underline">Instagram</a>!
+                        </span>
+                    }>
+                        painting my nails
+                    </InteractiveMark>,
+                    <InteractiveMark content={
+                        <span>
+                            I like dystopian and historical fiction. Some of my favorites include The Poppy War trilogy by R.F. Kuang and The Hunger Games series by Suzanne Collins.
+                        </span>
+                    }>
+                        reading books
+                    </InteractiveMark>, and hiking with my friends.
                 </div>
             </div>
         </BentoItem>
