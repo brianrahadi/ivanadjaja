@@ -68,9 +68,9 @@ export function Header() {
                 {weather && (
                     <span className="flex items-center gap-2 animate-fade-in">
                         <span>Vancouver, BC</span>
-                        <span>-</span>
+                        <span>•</span>
                         <span className="hidden md:inline">{weather.desc}</span>
-                        <span className="hidden md:inline">-</span>
+                        <span className="hidden md:inline">•</span>
                         <span>{Math.round(weather.temp)}°C</span>
                     </span>
                 )}

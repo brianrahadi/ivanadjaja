@@ -13,7 +13,7 @@ const WORK_EXPERIENCE = [
     {
         role: 'Research Assistant',
         company: 'Beatty Lab @ UBC',
-        period: 'May 2025 - Aug 2025',
+        period: '25 - Aug 2025',
         description: 'Investigated cell surface receptors for the phage-like gene transfer agent (RcGTA) in Rhodobacter capsulatus using FastCloning to generate knock-out mutants.'
     },
     {
