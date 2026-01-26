@@ -1,6 +1,7 @@
 import { BentoItem } from '../BentoItem';
 import { InteractiveMark } from '../InteractiveMark';
 import IvanaImg from '../../assets/ivana.webp';
+import MemojiImg from '../../assets/memoji.png';
 
 interface BlockProps {
     colSpan?: 1 | 2 | 3 | 4;
@@ -12,13 +13,24 @@ export function ProfileBlock({ colSpan, rowSpan, delay }: BlockProps) {
     return (
         <BentoItem colSpan={colSpan} rowSpan={rowSpan} delay={delay} className="flex flex-col md:flex-row p-4 md:p-0 bg-[#fefae0] overflow-hidden">
             {/* Image Section */}
-            <div className="flex justify-between items-start mb-4 md:mb-0 md:w-1/3 md:h-full md:relative">
-                <div className="h-24 w-24 rounded-2xl overflow-hidden md:rounded-none md:border-none md:w-full md:h-full md:absolute md:inset-0">
-                    <img
-                        src={IvanaImg}
-                        alt="Profile"
-                        className="w-full h-full object-cover rounded-full md:rounded-none"
-                    />
+            <div className="flex justify-center items-center mb-4 md:mb-0 md:w-1/3 md:h-full md:relative perspective-1000 group/image">
+                <div className="relative h-24 w-24 md:w-full md:h-full transition-transform duration-700 transform-style-3d group-hover/image:rotate-y-180">
+                    {/* Front Side */}
+                    <div className="absolute inset-0 w-full h-full backface-hidden flex items-center justify-center">
+                        <img
+                            src={IvanaImg}
+                            alt="Profile"
+                            className="ml-4 w-full h-full md:w-48 md:h-48 object-cover rounded-full"
+                        />
+                    </div>
+                    {/* Back Side */}
+                    <div className="absolute inset-0 w-full h-full backface-hidden rotate-y-180 flex items-center justify-center">
+                        <img
+                            src={MemojiImg}
+                            alt="Profile Memoji"
+                            className="w-full h-full md:w-48 md:h-48 object-cover rounded-full"
+                        />
+                    </div>
                 </div>
             </div>
 
