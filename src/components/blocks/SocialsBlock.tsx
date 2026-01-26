@@ -10,7 +10,7 @@ interface BlockProps {
 
 export function SocialsBlock({ colSpan, rowSpan, delay }: BlockProps) {
     return (
-        <BentoItem colSpan={colSpan} rowSpan={rowSpan} delay={delay} className="h-64 md:h-auto flex flex-col justify-center items-center gap-4 bg-[#fefae0] !p-0">
+        <BentoItem colSpan={colSpan} rowSpan={rowSpan} delay={delay} className="h-48 md:h-auto flex flex-col justify-center items-center gap-4 bg-[#fefae0] !p-0">
             <div className="grid grid-cols-2 gap-2 w-full h-full p-4">
                 <a href="#" className="border border-[#E7E5E4] flex items-center justify-center bg-white rounded-2xl hover:scale-105 transition-transform text-stone-600 shadow-sm hover:shadow-md hover:text-stone-900">
                     <FileText size={24} />
