@@ -6,13 +6,16 @@ interface BentoItemProps {
     className?: string;
     colSpan?: 1 | 2 | 3 | 4;
     rowSpan?: 1 | 2 | 3 | 4;
+    delay?: number;
 }
 
-export function BentoItem({ children, className, colSpan = 1, rowSpan = 1 }: BentoItemProps) {
+export function BentoItem({ children, className, colSpan = 1, rowSpan = 1, delay = 0 }: BentoItemProps) {
     return (
         <div
+            style={{ animationDelay: `${delay}ms`, animationFillMode: 'both' }}
             className={cn(
                 "group relative overflow-hidden rounded-3xl bg-[#F9F5EE] shadow-[0_2px_8px_rgba(0,0,0,0.08)] hover:shadow-[0_8px_16px_rgba(0,0,0,0.12)] transition-all duration-300",
+                "animate-fade-in-up opacity-0",
                 // Mobile first: default to full width (handled by grid cols), but here we control spans on different breakpoints
                 "col-span-1", // Default mobile
 

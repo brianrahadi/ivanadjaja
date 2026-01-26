@@ -11,6 +11,7 @@ function App() {
             key={item.id}
             colSpan={item.colSpan}
             rowSpan={item.rowSpan}
+            delay={item.delay}
           />
         ))}
 

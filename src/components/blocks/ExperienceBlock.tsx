@@ -6,6 +6,7 @@ import { cn } from '../../lib/utils';
 interface BlockProps {
     colSpan?: 1 | 2 | 3 | 4;
     rowSpan?: 1 | 2 | 3 | 4;
+    delay?: number;
 }
 
 const WORK_EXPERIENCE = [
@@ -58,13 +59,13 @@ const VOLUNTEER_EXPERIENCE = [
 
 type TabType = 'work' | 'volunteering';
 
-export function ExperienceBlock({ colSpan = 2, rowSpan = 2 }: BlockProps) {
+export function ExperienceBlock({ colSpan, rowSpan, delay }: BlockProps) {
     const [activeTab, setActiveTab] = useState<TabType>('work');
 
     const experiences = activeTab === 'work' ? WORK_EXPERIENCE : VOLUNTEER_EXPERIENCE;
 
     return (
-        <BentoItem colSpan={colSpan} rowSpan={rowSpan} className="flex flex-col p-4 md:p-6 md:order-2">
+        <BentoItem colSpan={colSpan} rowSpan={rowSpan} delay={delay} className="flex flex-col p-4 md:p-6 md:order-2">
             <div className="flex items-center justify-between mb-6">
                 <div className="flex bg-stone-100 p-1 rounded-xl">
                     <button

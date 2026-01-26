@@ -5,6 +5,7 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 interface BlockProps {
     colSpan?: 1 | 2 | 3 | 4;
     rowSpan?: 1 | 2 | 3 | 4;
+    delay?: number;
 }
 
 const PHOTOS = [
@@ -22,7 +23,7 @@ const PHOTOS = [
     }
 ];
 
-export function PhotoCollageBlock({ colSpan = 1, rowSpan = 1 }: BlockProps) {
+export function PhotoCollageBlock({ colSpan, rowSpan, delay }: BlockProps) {
     const [currentIndex, setCurrentIndex] = useState(0);
 
     const nextPhoto = () => {
@@ -40,7 +41,7 @@ export function PhotoCollageBlock({ colSpan = 1, rowSpan = 1 }: BlockProps) {
     }, []);
 
     return (
-        <BentoItem colSpan={colSpan} rowSpan={rowSpan} className="h-64 md:h-auto !p-0 relative group md:order-1">
+        <BentoItem colSpan={colSpan} rowSpan={rowSpan} delay={delay} className="h-64 md:h-auto !p-0 relative group md:order-1">
             <div className="w-full h-full relative">
                 {PHOTOS.map((photo, index) => (
                     <img

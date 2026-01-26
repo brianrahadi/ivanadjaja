@@ -4,11 +4,12 @@ import IvanaImg from '../../assets/ivana.webp';
 interface BlockProps {
     colSpan?: 1 | 2 | 3 | 4;
     rowSpan?: 1 | 2 | 3 | 4;
+    delay?: number;
 }
 
-export function ProfileBlock({ colSpan = 2, rowSpan = 1 }: BlockProps) {
+export function ProfileBlock({ colSpan, rowSpan, delay }: BlockProps) {
     return (
-        <BentoItem colSpan={colSpan} rowSpan={rowSpan} className="flex flex-col md:flex-row p-4 md:p-0 bg-[#fefae0] overflow-hidden">
+        <BentoItem colSpan={colSpan} rowSpan={rowSpan} delay={delay} className="flex flex-row p-4 md:p-0 bg-[#fefae0] overflow-hidden">
             {/* Image Section */}
             <div className="flex justify-between items-start mb-4 md:w-1/3 md:h-full md:relative">
                 <div className="h-24 w-24 rounded-2xl overflow-hidden md:rounded-none md:border-none md:w-full md:h-full md:absolute md:inset-0">
