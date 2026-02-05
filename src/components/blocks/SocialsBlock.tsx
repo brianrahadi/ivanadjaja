@@ -12,7 +12,7 @@ export function SocialsBlock({ colSpan, rowSpan, delay }: BlockProps) {
     return (
         <BentoItem colSpan={colSpan} rowSpan={rowSpan} delay={delay} className="h-48 md:h-auto flex flex-col justify-center items-center gap-4 bg-[#fefae0] !p-0">
             <div className="grid grid-cols-2 gap-2 w-full h-full p-4">
-                <a href="#" className="border border-[#E7E5E4] flex items-center justify-center bg-white rounded-2xl hover:scale-105 transition-transform text-stone-600 shadow-sm hover:shadow-md hover:text-stone-900">
+                <a href="https://drive.google.com/file/d/1p0HF7JbLNI6FhczjRyaT4b-ucv6ZdFxc/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="border border-[#E7E5E4] flex items-center justify-center bg-white rounded-2xl hover:scale-105 transition-transform text-stone-600 shadow-sm hover:shadow-md hover:text-stone-900">
                     <FileText size={24} />
                 </a>
                 <a href="https://www.linkedin.com/in/ivana-djaja/" target="_blank" rel="noopener noreferrer" className="border border-[#E7E5E4] flex items-center justify-center bg-[#0077b5] text-white rounded-2xl hover:scale-105 transition-transform shadow-sm">
