@@ -1,6 +1,10 @@
 import { useState, useEffect } from 'react';
 import { BentoItem } from '../BentoItem';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import photo1 from '../../assets/photo1.jpeg';
+import photo2 from '../../assets/photo2.jpeg';
+import photo3 from '../../assets/photo3.jpeg';
+import photo4 from '../../assets/photo4.jpeg';
 
 interface BlockProps {
     colSpan?: 1 | 2 | 3 | 4;
@@ -10,16 +14,20 @@ interface BlockProps {
 
 const PHOTOS = [
     {
-        url: 'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=80&w=600&auto=format&fit=crop',
-        alt: 'Nature landscape'
+        url: photo1,
+        alt: 'Concert'
     },
     {
-        url: 'https://images.unsplash.com/photo-1497215728101-856f4ea42174?q=80&w=600&auto=format&fit=crop',
-        alt: 'Office workspace'
+        url: photo2,
+        alt: 'Hiking'
     },
     {
-        url: 'https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=600&auto=format&fit=crop',
-        alt: 'Tech setup'
+        url: photo3,
+        alt: 'Labwork'
+    },
+    {
+        url: photo4,
+        alt: 'Volunteering @ Geneskool'
     }
 ];
 
