@@ -45,7 +45,7 @@ export function ProfileBlock({ colSpan, rowSpan, delay }: BlockProps) {
                                 I'm fascinated by structural biology and protein engineering, specifically looking at how we can design novel therapeutics.
                             </span>
                         }>
-                            biological R&D
+                            biotech R&D
                         </InteractiveMark>. Outside of school, I enjoy{' '}
                         <InteractiveMark content={
                             <span>
