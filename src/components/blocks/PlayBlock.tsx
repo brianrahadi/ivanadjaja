@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { useQuery, useMutation } from 'convex/react';
+import { api } from '../../../convex/_generated/api';
 import { BentoItem } from '../BentoItem';
 import { RefreshCcw } from 'lucide-react';
 
@@ -21,27 +23,27 @@ const COLORS = [
 ];
 
 export function PlayBlock({ colSpan, rowSpan, delay }: BlockProps) {
-    // null means empty, number is index into COLORS array
-    const [wells, setWells] = useState<(number | null)[][]>(() =>
-        Array.from({ length: ROWS }, () => Array(COLS).fill(null))
-    );
     const [selectedColor, setSelectedColor] = useState<number>(0);
 
-    const handleWellClick = (row: number, col: number) => {
-        setWells(prev => {
-            const newWells = prev.map(r => [...r]);
-            // Toggle: if same color, clear it; otherwise set new color
-            if (newWells[row][col] === selectedColor) {
-                newWells[row][col] = null;
-            } else {
-                newWells[row][col] = selectedColor;
-            }
-            return newWells;
-        });
+    // Real-time subscription to all wells
+    const wellsMap = useQuery(api.wells.getAll) ?? {};
+
+    // Mutations for updating wells
+    const setWell = useMutation(api.wells.setWell);
+    const clearAllWells = useMutation(api.wells.clearAll);
+
+    const handleWellClick = async (row: number, col: number) => {
+        await setWell({ row, col, colorIndex: selectedColor });
     };
 
-    const clearAll = () => {
-        setWells(Array.from({ length: ROWS }, () => Array(COLS).fill(null)));
+    const handleClearAll = async () => {
+        await clearAllWells();
+    };
+
+    // Get well color from the real-time map
+    const getWellColor = (row: number, col: number): number | null => {
+        const key = `${row}-${col}`;
+        return key in wellsMap ? wellsMap[key] : null;
     };
 
     return (
@@ -54,8 +56,8 @@ export function PlayBlock({ colSpan, rowSpan, delay }: BlockProps) {
                             key={color.name}
                             onClick={() => setSelectedColor(idx)}
                             className={`w-5 h-5 rounded-full transition-all shadow-sm border-2 ${selectedColor === idx
-                                    ? 'border-gray-800 scale-110'
-                                    : 'border-transparent hover:scale-105'
+                                ? 'border-gray-800 scale-110'
+                                : 'border-transparent hover:scale-105'
                                 }`}
                             style={{ backgroundColor: color.value }}
                             title={color.name}
@@ -63,7 +65,7 @@ export function PlayBlock({ colSpan, rowSpan, delay }: BlockProps) {
                     ))}
                 </div>
                 <button
-                    onClick={clearAll}
+                    onClick={handleClearAll}
                     className="p-1.5 rounded-full bg-white/60 hover:bg-white text-gray-600 transition-all shadow-sm"
                     title="Clear all"
                 >
@@ -79,23 +81,26 @@ export function PlayBlock({ colSpan, rowSpan, delay }: BlockProps) {
                         gridTemplateColumns: `repeat(${COLS}, 1fr)`,
                     }}
                 >
-                    {wells.map((row, rowIdx) =>
-                        row.map((well, colIdx) => (
-                            <button
-                                key={`${rowIdx}-${colIdx}`}
-                                onClick={() => handleWellClick(rowIdx, colIdx)}
-                                className={`
-                                    w-4 h-4 md:w-5 md:h-5 rounded-full 
-                                    border border-gray-300
-                                    transition-all duration-150
-                                    hover:scale-110 hover:shadow-md
-                                    ${well === null ? 'bg-gray-100' : ''}
-                                `}
-                                style={{
-                                    backgroundColor: well !== null ? COLORS[well].value : undefined,
-                                }}
-                            />
-                        ))
+                    {Array.from({ length: ROWS }).map((_, rowIdx) =>
+                        Array.from({ length: COLS }).map((_, colIdx) => {
+                            const wellColor = getWellColor(rowIdx, colIdx);
+                            return (
+                                <button
+                                    key={`${rowIdx}-${colIdx}`}
+                                    onClick={() => handleWellClick(rowIdx, colIdx)}
+                                    className={`
+                                        w-4 h-4 md:w-5 md:h-5 rounded-full 
+                                        border border-gray-300
+                                        transition-all duration-150
+                                        hover:scale-110 hover:shadow-md
+                                        ${wellColor === null ? 'bg-gray-100' : ''}
+                                    `}
+                                    style={{
+                                        backgroundColor: wellColor !== null ? COLORS[wellColor].value : undefined,
+                                    }}
+                                />
+                            );
+                        })
                     )}
                 </div>
             </div>
